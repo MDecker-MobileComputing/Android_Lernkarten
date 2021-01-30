@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context=".NeueLernkarteActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lernkarte_vorne" />
+    <EditText
+        android:id="@+id/vorneTextview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lernkarte_hinten" />
+    <EditText
+        android:id="@+id/hintenTextview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/anlegenButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lernkarte_neu"
+        android:onClick="onButtonAnlegen" />
+
+</LinearLayout>
