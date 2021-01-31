@@ -2,6 +2,7 @@ package de.mide.lernkarten.db;
 
 import androidx.room.Dao;
 import androidx.room.Insert;
+import androidx.room.Query;
 
 /**
  * Interface aus dem das DAO erzeugt wird (DAO: Data Access Object), siehe auch die Doku
@@ -25,5 +26,13 @@ public interface LernkartenDao {
      */
     @Insert
     public void insertLernkarte(LernkarteEntity lernkarte);
+
+    /**
+     * Records in Tabelle {@code LernkarteEntity} zählen.
+     *
+     * @return  Anzahl in DB gespeicherte Datensätze.
+     */
+    @Query("SELECT COUNT(*) FROM LernkarteEntity")
+    public int getAnzahlDatensaetze();
 
 }

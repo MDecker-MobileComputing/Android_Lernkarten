@@ -7,7 +7,6 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-import java.util.logging.Logger;
 
 /**
  * Die Datenbank-Klasse enthält eine Getter-Methode für die DAOs.
@@ -31,9 +30,9 @@ public abstract class MeineDatenbank extends RoomDatabase {
     private static MeineDatenbank SINGLETON_INSTANCE = null;
 
     /**
-     * Gettern für Lernkarten-DAO.
+     * Getter für Lernkarten-DAO.
      *
-     * @return  Lernkarten-DAO für Ausführung CRUD-Operation auf Lernkarten-Tabellen.
+     * @return  Lernkarten-DAO für Ausführung CRUD-Operation auf Tabelle mit Lernkarten.
      */
     public abstract LernkartenDao lernkartenDao();
 

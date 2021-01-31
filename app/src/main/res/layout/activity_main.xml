@@ -14,4 +14,13 @@
         android:text="@string/lernkarte_neu"
         android:onClick="onButtonNeueLernkarte" />
 
+    <TextView
+        android:id="@+id/anzahlTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17sp"
+        android:gravity="center_horizontal"
+        android:textSize="20sp"
+        android:text="..." />
+
 </LinearLayout>

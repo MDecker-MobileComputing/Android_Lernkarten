@@ -19,8 +19,8 @@ import de.mide.lernkarten.db.MeineDatenbank;
  */
 public class NeueLernkarteActivity extends Activity {
 
-    /** Singleton-Instanz des Datenbank-Objekts. */
-    private MeineDatenbank _meineDatenbank = null;
+    /** DAO-Objekt für CRUD-Operation auf Tabelle mit Lernkarten.  */
+    private LernkartenDao _dao = null;
 
     /** Element zur Eingabe Text auf Vorderseite der Lernkarte. */
     private EditText _vorneEditText = null;
@@ -38,7 +38,8 @@ public class NeueLernkarteActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_neue_lernkarte);
 
-        _meineDatenbank = MeineDatenbank.getSingletonInstance(this);
+        MeineDatenbank db = MeineDatenbank.getSingletonInstance(this);
+        _dao = db.lernkartenDao();
 
         _vorneEditText  = findViewById(R.id.vorneTextview);
         _hintenEditText = findViewById(R.id.hintenTextview);
@@ -53,13 +54,13 @@ public class NeueLernkarteActivity extends Activity {
     public void onButtonAnlegen(View view) {
 
         String textVorne  = _vorneEditText.getText().toString().trim();
-        String textHinten = _hintenEditText.getText().toString().trim();
-
         if (textVorne.length() == 0) {
 
             zeigeDialog(this, "Fehler", "Kein Text für Vorderseite eingegeben.");
             return;
         }
+
+        String textHinten = _hintenEditText.getText().toString().trim();
         if (textHinten.length() == 0) {
 
             zeigeDialog(this, "Fehler", "Kein Text für Rückseite eingegeben.");
@@ -67,8 +68,7 @@ public class NeueLernkarteActivity extends Activity {
         }
 
 
-        LernkartenDao dao = _meineDatenbank.lernkartenDao();
-
+        // Datensatz für Lernkarte in Tabelle einfügen
         LernkarteEntity lernkarte = new LernkarteEntity();
 
         lernkarte.textVorne  = textVorne;
@@ -77,7 +77,7 @@ public class NeueLernkarteActivity extends Activity {
         lernkarte.anzahlFalsch  = 0;
         lernkarte.anzahlRichtig = 0;
 
-        dao.insertLernkarte(lernkarte);
+        _dao.insertLernkarte(lernkarte);
 
         zeigeDialog(this, "Erfolg", "Datensatz wurde eingefügt.");
 
