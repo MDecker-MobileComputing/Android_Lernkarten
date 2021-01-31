@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     /** UI-Element zur Anzeige der aktuellen Anzahl der Lernkarten. */
     private TextView _anzahlTextView = null;
 
+
     /**
      * Lifecycle-Methode für Initialisierung der Activity.
      */
@@ -41,6 +42,17 @@ public class MainActivity extends AppCompatActivity {
 
         MeineDatenbank db = MeineDatenbank.getSingletonInstance(this);
         _dao = db.lernkartenDao();
+    }
+
+    /**
+     * Lifecycle-Methode zur Aktualisierung der Anzeige mit der Anzahl der derzeit
+     * in der DB gespeicherten Lernkarten. Diese Lifecycle-Methode wird aufgerufen,
+     * wenn die Activity vom Zustand "unsichtbar" in den Zustand "sichtbar" wechselt.
+     */
+    @Override
+    public void onStart() {
+
+        super.onStart();
 
         int anzahl = _dao.getAnzahlDatensaetze();
         _anzahlTextView.setText("Anzahl Lernkarten: " + anzahl);

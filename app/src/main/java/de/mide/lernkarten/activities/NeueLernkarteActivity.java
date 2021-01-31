@@ -97,7 +97,7 @@ public class NeueLernkarteActivity extends AppCompatActivity {
      *
      * @param view  Button, der Event ausgelöst hat.
      */
-    public void onButtonAbbrechen(View view) {
+    public void onButtonZurueckMainActivity(View view) {
 
         finish();
     }
