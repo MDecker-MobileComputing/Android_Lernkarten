@@ -9,6 +9,12 @@ import androidx.room.Entity;
  * Entity für Lernkarten-Datensätze/Objekte.
  * <br><br>
  *
+ * Die einzelnen Member-Variablen werden ausnahmsweise nicht mit einem Unterstrich
+ * am Anfang versehen, weil die Entity-Klasse keine Getter/Setter-Methoden hat, und
+ * eine Befüllung der Membervariablen in der Form <code>lokaleVariable._memberVariable</i>
+ * seltsam aussehen würde.
+ * <br><br>
+ *
  * This file is licensed under the terms of the BSD 3-Clause License.
  */
 @Entity
