@@ -9,19 +9,21 @@
     android:padding="10dp"
     tools:context=".activities.LernMenueActivity">
 
-
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/lernmodus_unbenutzt_button"
         android:onClick="onButtonUnbenutzt" />
-
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/lernmodus_noch_nie_richtig_button"
         android:onClick="onButtonNochNieRichtig" />
-
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lernmodus_mehr_falsche_als_richtige_button"
+        android:onClick="onButtonMehrFalscheAlsRichtige" />
 
     <Button
         android:layout_width="match_parent"

@@ -11,6 +11,9 @@ package de.mide.lernkarten.helpers;
  * <a href="https://www.infoworld.com/article/2072870/java-enums-are-inherently-serializable.html">hier</a>.
  * <br><br>
  *
+ * Für jeden Lernmodus in dieser Enum-Datei gibt es eine zugehörige Query-Methode im DAO-Interface
+ * {@link de.mide.lernkarten.db.LernkartenDao}.
+ *
  * This file is licensed under the terms of the BSD 3-Clause License.
  */
 public enum LernModusEnum {
@@ -33,7 +36,14 @@ public enum LernModusEnum {
      */
     MEHR_FALSCHE_ALS_RICHTIGE_ANTWORTEN,
 
+    /**
+     * Lernkarte aus DB holen, deren letzte richtige Beantwortung am längsten zurückliegt.
+     */
     SCHON_LANGE_NICHT_MEHR_RICHTIG_BEANTWORTET,
 
+    /**
+     * Lernkarte aus DB holen, deren letzte falsche Beantwortung am längsten zurückliegt.
+     */
     SCHON_LANGE_NICHT_MEHR_FALSCH_BEANTWORTET
+
 }

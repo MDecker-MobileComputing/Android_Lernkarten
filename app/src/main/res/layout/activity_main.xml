@@ -13,7 +13,7 @@
         android:id="@+id/neuButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/neue_lernkarte_button"
+        android:text="@string/neue_lernkarten_button"
         android:onClick="onButtonNeueLernkarte" />
 
     <Button

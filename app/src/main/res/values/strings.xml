@@ -2,10 +2,12 @@
 
     <string name="app_name">Lernkarten</string>
 
-    <string name="neue_lernkarte_button">Lernkarten anlegen</string>
+    <string name="neue_lernkarten_button">Lernkarten anlegen</string>
+    <string name="lernkarte_erzeugen_button">Lernkarte erzeugen</string>
     <string name="lernen_button">Lernen/Üben</string>
     <string name="lernmodus_unbenutzt_button">Unbenutzte Lernkarten</string>
     <string name="lernmodus_noch_nie_richtig_button">Noch nie richtig</string>
+    <string name="lernmodus_mehr_falsche_als_richtige_button">Mehr falsche als richtige Antworten</string>
     <string name="zurueck_mainactivity_button">Zurück zum Hauptmenü</string>
     <string name="abbrechen_button">Abbrechen</string>
     <string name="umdrehen_button">Karte umdrehen</string>

@@ -123,7 +123,7 @@ public class ZeigeLernkarteActivity extends AppCompatActivity {
      */
     private void holeLernkarte() {
 
-        LernkarteEntity[] lernkarteArray;
+        LernkarteEntity[] lernkarteArray = new LernkarteEntity[0];
 
         _lernkarteEntity = null;
 
@@ -139,15 +139,24 @@ public class ZeigeLernkarteActivity extends AppCompatActivity {
 
             case NOCH_NIE_VERWENDET:
                 lernkarteArray = _dao.getUnbenutzteKarte();
-                if (lernkarteArray.length > 0) {
+            break;
 
-                    _lernkarteEntity = lernkarteArray[0];
-                }
+            case NOCH_NIE_RICHTIG_BEANTWORTET:
+                lernkarteArray = _dao.getNochNieRichtigBeantworteteKarte();
+            break;
+
+            case MEHR_FALSCHE_ALS_RICHTIGE_ANTWORTEN:
+                lernkarteArray = _dao.getMehrFalscheAlsRichtigeAntwortenKarte();
             break;
 
             default:
                 zeigeDialog( this,"Interner Fehler",
                         "Unerwarteter Wert für Lern-Modus: " + _lernModus);
+        }
+
+        if (lernkarteArray.length > 0) {
+
+            _lernkarteEntity = lernkarteArray[0];
         }
 
         if (_lernkarteEntity != null) {
@@ -185,7 +194,8 @@ public class ZeigeLernkarteActivity extends AppCompatActivity {
 
         if (_lernkarteEntity == null) {
 
-            Log.e(TAG4LOGGING, "Button zum Umdrehen von Lernkarte sollte bei fehlender Lernkarte nicht aktiv sind.");
+            Log.e(TAG4LOGGING,
+                    "Button zum Umdrehen von Lernkarte sollte bei fehlender Lernkarte nicht aktiv sind.");
             return;
         }
 
