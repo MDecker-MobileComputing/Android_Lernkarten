@@ -11,8 +11,18 @@
         android:id="@+id/neuButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/lernkarte_neu"
+        android:text="@string/neue_lernkarte_button"
+        android:layout_margin="10dp"
         android:onClick="onButtonNeueLernkarte" />
+
+    <Button
+        android:id="@+id/lernenButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lernen_button"
+        android:layout_margin="10dp"
+        android:onClick="onButtonLernen" />
+
 
     <TextView
         android:id="@+id/anzahlTextView"
@@ -20,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="17sp"
         android:gravity="center_horizontal"
-        android:textSize="20sp"
+        android:textSize="15sp"
         android:text="..." />
 
 </LinearLayout>

@@ -6,6 +6,7 @@ import android.util.Log;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
+import androidx.room.TypeConverters;
 
 
 /**
@@ -15,6 +16,7 @@ import androidx.room.RoomDatabase;
  * This file is licensed under the terms of the BSD 3-Clause License.
  */
 @Database(entities = {LernkarteEntity.class}, version=1)
+@TypeConverters({MeineTypeConverter.class})
 public abstract class MeineDatenbank extends RoomDatabase {
 
     public static final String TAG4LOGGING = "MeineDatenbank";

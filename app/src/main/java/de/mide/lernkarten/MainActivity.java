@@ -43,13 +43,25 @@ public class MainActivity extends Activity {
     }
 
     /**
-     * Button-Event-Handler für Anlegen neuer Lernkarte.
+     * Button-Event-Handler für Anlegen neuer Lernkarte, also Navigation zu anderer
+     * Activity.
      *
-     * @param view  UI-Element (Button), welches das Event auslöst hat.
+     * @param view  Button, der das Event auslöst hat.
      */
     public void onButtonNeueLernkarte(View view) {
 
         Intent intent = new Intent(this, NeueLernkarteActivity.class);
+        startActivity(intent);
+    }
+
+    /**
+     * Button-Event-Handler für Anlegen neuer Lernkarte, also Navigation zu anderer Activity.
+     *
+     * @param view  Button, der das Event auslöst hat.
+     */
+    public void onButtonLernen(View view) {
+
+        Intent intent = new Intent(this, LernMenueActivity.class);
         startActivity(intent);
     }
 

@@ -5,13 +5,15 @@ import androidx.room.ColumnInfo;
 import androidx.room.PrimaryKey;
 import androidx.room.Entity;
 
+import java.util.Date;
+
 /**
  * Entity für Lernkarten-Datensätze/Objekte.
  * <br><br>
  *
  * Die einzelnen Member-Variablen werden ausnahmsweise nicht mit einem Unterstrich
  * am Anfang versehen, weil die Entity-Klasse keine Getter/Setter-Methoden hat, und
- * eine Befüllung der Membervariablen in der Form <code>lokaleVariable._memberVariable</i>
+ * eine Befüllung der Membervariablen in der Form <code>lokaleVariable._memberVariable</code>
  * seltsam aussehen würde.
  * <br><br>
  *
@@ -40,5 +42,19 @@ public class LernkarteEntity {
     /** Anzahl, wie oft die Lernkarte falsch beantwortet wurde. */
     @ColumnInfo(name = "anzahl_falsch")
     public int anzahlFalsch;
+
+    /**
+     * Zeitstempel für letzte richtige Beantwortung der Karte, siehe auch
+     * Klasse {@link MeineTypeConverter}; der Initialwert ist <code>null</code>.
+     */
+    @ColumnInfo(name = "datetime_richtig")
+    public Date dateTimeLetztesMalRichtigeAntwort;
+
+    /**
+     * Zeitstempel für letzte falsche Beantwortung der Karte, siehe auch
+     * Klasse {@link MeineTypeConverter}; der Initialwert ist <code>null</code>.
+     */
+    @ColumnInfo(name = "datetime_falsch")
+    public Date dateTimeLetztesMalFalscheAntwort;
 
 }

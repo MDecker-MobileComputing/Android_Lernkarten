@@ -30,7 +30,7 @@
         android:id="@+id/anlegenButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/lernkarte_neu"
+        android:text="@string/lernen_button"
         android:onClick="onButtonAnlegen" />
 
 </LinearLayout>

@@ -2,11 +2,12 @@
 
     <string name="app_name">Lernkarten</string>
 
-    <string name="lernkarte_neu">Neue Lernkarte</string>
+    <string name="neue_lernkarte_button">Neue Lernkarte</string>
+    <string name="lernen_button">Lernen/Üben</string>
 
     <string name="lernkarte_anlegen">Neue Lernkarte</string>
 
-    <string name="lernkarte_vorne" >Vorderseite der Lernkarte</string>
+    <string name="lernkarte_vorne">Vorderseite der Lernkarte</string>
     <string name="lernkarte_hinten">Rückseite der Lernkarte</string>
 
     <string name="weiter_button">Weiter</string>
