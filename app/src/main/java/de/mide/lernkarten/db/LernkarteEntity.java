@@ -22,7 +22,7 @@ import java.util.Date;
 @Entity
 public class LernkarteEntity {
 
-    /** Eindeutiger Schlüssel (Unique ID) der Lernkarte. */
+    /** Eindeutiger Schlüssel (Unique ID) der Lernkarte, wird automatisch befüllt. */
     @PrimaryKey(autoGenerate = true)
     @NonNull
     public int uid;

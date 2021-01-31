@@ -3,6 +3,7 @@ package de.mide.lernkarten.db;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
+import androidx.room.Update;
 
 /**
  * Interface aus dem das DAO erzeugt wird (DAO: Data Access Object), siehe auch die Doku
@@ -27,6 +28,14 @@ public interface LernkartenDao {
      */
     @Insert
     public void insertLernkarte(LernkarteEntity lernkarte);
+
+    /**
+     * Lernkarte aktualisieren.
+     *
+     * @param lernkarte  Zu aktualisierende Lernkarte.
+     */
+    @Update
+    public void updateLernkarte(LernkarteEntity lernkarte);
 
     /**
      * Anzahl der Lernkarten zählen.

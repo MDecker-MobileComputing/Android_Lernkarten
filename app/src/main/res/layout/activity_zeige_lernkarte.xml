@@ -47,6 +47,22 @@
         android:onClick="onButtonUmdrehen" />
 
     <Button
+        android:id="@+id/richtigeAntwortButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/richtig_button"
+        android:visibility="invisible"
+        android:onClick="onButtonRichtig" />
+    <Button
+        android:id="@+id/falscheAntwortButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/falsch_button"
+        android:visibility="invisible"
+        android:onClick="onButtonFalsch" />
+
+    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"

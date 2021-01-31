@@ -15,6 +15,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.Date;
+
 import de.mide.lernkarten.R;
 import de.mide.lernkarten.db.LernkarteEntity;
 import de.mide.lernkarten.db.LernkartenDao;
@@ -22,14 +24,18 @@ import de.mide.lernkarten.db.MeineDatenbank;
 import de.mide.lernkarten.helpers.LernModusEnum;
 
 /**
- * Activity zur Anzeige einer Lernkarte, die als Intent übergeben wird.
+ * Activity zur Anzeige einer Lernkarte. Die Lernkarten werden anhand des Lernmodus, der
+ * als Extra übergeben wird, ausgewählt. Mit einem Button kann die Lernkarte "umgedreht"
+ *  werden, danach kann der Nutzer eingeben, ob er/sie die richtige Antwort wußte oder
+ *  nicht.
  * <br><br>
  *
  * This file is licensed under the terms of the BSD 3-Clause License.
  */
 public class ZeigeLernkarteActivity extends AppCompatActivity {
 
-    private boolean _rueckseiteSichtbar = false;
+    /** Zähler für die bisher angezeigten Lernkarten. */
+    private int _lernkartenZaehler = 0;
 
     /**
      * Spezifiziert Lernmodus, wird über Extra in Intent, mit dem diese Activity gestartet
@@ -52,6 +58,18 @@ public class ZeigeLernkarteActivity extends AppCompatActivity {
      */
     private Button _umdrehenButton = null;
 
+    /**
+     * Button, mit der Nutzer eingibt, dass er die richtige Antwort wusste; wird erst dann
+     * angezeigt, wenn die Rückseite der Lernkarte angezeigt wird.
+     */
+    private Button _richtigeAntwortButton = null;
+
+    /**
+     * Button, mit der Nutzer eingibt, dass er die richtige Antwort NICHT wusste; wird erst dann
+     * angezeigt, wenn die Rückseite der Lernkarte angezeigt wird.
+     */
+    private Button _falscheAntwortButton = null;
+
     /** UI-Element zur Darstellung Text für Vorderseite von Karte. */
     private TextView _vorderseiteTextview = null;
 
@@ -70,6 +88,8 @@ public class ZeigeLernkarteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_zeige_lernkarte);
 
+        setzeTitel();
+
         Intent intent = getIntent(); // Intent, mit dem diese Activity gestartet
         _lernModus = (LernModusEnum) intent.getSerializableExtra(EXTRA_KEY_LERN_MODUS);
 
@@ -78,22 +98,42 @@ public class ZeigeLernkarteActivity extends AppCompatActivity {
 
         _umdrehenButton          = findViewById(R.id.umdrehenButton         );
         _vorderseiteTextview     = findViewById(R.id.karteVorneTextview     );
-        _rueckseiteTextview = findViewById(R.id.karteHintenTextview    );
+        _rueckseiteTextview      = findViewById(R.id.karteHintenTextview    );
         _rueckseiteLabelTextview = findViewById(R.id.rueckseiteLabelTextview);
+
+        _richtigeAntwortButton = findViewById(R.id.richtigeAntwortButton);
+        _falscheAntwortButton  = findViewById(R.id.falscheAntwortButton);
 
         holeLernkarte();
     }
 
     /**
-     * Holt eine Lernkarte aus der Datenbank für den aktuellen Lernmodus.
+     * Setzt Titel der Activity, der Anzahl der bearbeiteten Karten enthält.
+     */
+    private void setzeTitel() {
+
+        String titel = "Lernen / Üben (Karten: " + _lernkartenZaehler + ")";
+        setTitle(titel);
+    }
+
+    /**
+     * Holt eine (weitere) Lernkarte aus der Datenbank für den aktuellen Lernmodus
+     * und zeigt sie an. Die Buttons werden auch entsprechend auf sichtbar bzw.
+     * unsichtbar geschaltet.
      */
     private void holeLernkarte() {
 
         LernkarteEntity[] lernkarteArray;
 
         _lernkarteEntity = null;
+
         _rueckseiteTextview.setVisibility(INVISIBLE);
         _rueckseiteLabelTextview.setVisibility(INVISIBLE);
+        _richtigeAntwortButton.setVisibility(INVISIBLE);
+        _falscheAntwortButton.setVisibility(INVISIBLE);
+
+        _vorderseiteTextview.setText( "" );
+        _rueckseiteTextview.setText(  "" );
 
         switch (_lernModus) {
 
@@ -110,17 +150,29 @@ public class ZeigeLernkarteActivity extends AppCompatActivity {
                         "Unerwarteter Wert für Lern-Modus: " + _lernModus);
         }
 
-        if (_lernkarteEntity == null) {
+        if (_lernkarteEntity != null) {
 
-            zeigeDialog( this,"Fehler",
-                    "Keine einzige Lernkarte für den gewählten Lernmodus gefunden.");
-        } else {
+            _lernkartenZaehler++;
+            setzeTitel();
 
             _umdrehenButton.setEnabled(true);
             _vorderseiteTextview.setText( _lernkarteEntity.textVorne  );
             _rueckseiteTextview.setText(  _lernkarteEntity.textHinten ); // Text wird nicht gleich sichtbar
 
             _umdrehenButton.setVisibility(VISIBLE);
+
+        } else {
+
+            if (_lernkartenZaehler == 0) {
+
+                zeigeDialog( this,"Info",
+                        "Keine einzige Lernkarte für den gewählten Lernmodus gefunden.");
+
+            } else {
+
+                zeigeDialog( this,"Info",
+                        "Keine weitere Lernkarte für den gewählten Lernmodus gefunden.");
+            }
         }
     }
 
@@ -140,7 +192,42 @@ public class ZeigeLernkarteActivity extends AppCompatActivity {
         _rueckseiteTextview.setVisibility(VISIBLE);
         _rueckseiteLabelTextview.setVisibility(VISIBLE);
 
+        _richtigeAntwortButton.setVisibility(VISIBLE);
+        _falscheAntwortButton.setVisibility(VISIBLE);
+
         _umdrehenButton.setVisibility(INVISIBLE);
+    }
+
+    /**
+     * Event-Handler für Button, mit der Nutzer eingibt, dass er die richtige Antwort wusste.
+     * Das Lernkarten-Objekt in der DB-Tabelle wird entsprechend aktualisiert; danach wird die
+     * nächste Lernkarte geholt.
+     *
+     * @param view  Button, der das Event ausgelöst hat.
+     */
+    public void onButtonRichtig(View view) {
+
+        _lernkarteEntity.anzahlRichtig++;
+        _lernkarteEntity.dateTimeLetztesMalRichtigeAntwort = new Date();
+        _dao.updateLernkarte(_lernkarteEntity);
+
+        holeLernkarte();
+    }
+
+    /**
+     * Event-Handler für Button, mit der Nutzer eingibt, dass er NICHT die richtige Antwort wusste.
+     * Das Lernkarten-Objekt in der DB-Tabelle wird entsprechend aktualisiert; danach wird die
+     * nächste Lernkarte geholt.
+     *
+     * @param view  Button, der das Event ausgelöst hat.
+     */
+    public void onButtonFalsch(View view) {
+
+        _lernkarteEntity.anzahlFalsch++;
+        _lernkarteEntity.dateTimeLetztesMalFalscheAntwort = new Date();
+        _dao.updateLernkarte(_lernkarteEntity);
+
+        holeLernkarte();
     }
 
     /**
