@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,10 +11,23 @@
 
 
     <Button
-        android:id="@+id/unbenutzteKarte"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/lernmodus_unbenutzt_button"
         android:onClick="onButtonUnbenutzt" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lernmodus_noch_nie_richtig_button"
+        android:onClick="onButtonNochNieRichtig" />
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="@string/zurueck_mainactivity_button"
+        android:onClick="onButtonHauptmenu" />
 
 </LinearLayout>

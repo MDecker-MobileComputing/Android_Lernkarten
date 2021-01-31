@@ -1,0 +1,56 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context=".activities.ZeigeLernkarteActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:text="@string/vorderseite_label" />
+    <TextView
+        android:id="@+id/karteVorneTextview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/rueckseiteLabelTextview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="17sp"
+        android:visibility="invisible"
+        android:textStyle="bold"
+        android:text="@string/rueckseite_label" />
+    <TextView
+        android:id="@+id/karteHintenTextview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:visibility="invisible"
+        android:text="" />
+
+    <Button
+        android:id="@+id/umdrehenButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/umdrehen_button"
+        android:enabled="false"
+        android:onClick="onButtonUmdrehen" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/lernmodus_beenden_button"
+        android:onClick="onButtonLernmodusBeenden" />
+
+</LinearLayout>

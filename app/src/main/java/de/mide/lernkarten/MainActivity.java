@@ -1,6 +1,6 @@
 package de.mide.lernkarten;
 
-import android.app.Activity;
+import static de.mide.lernkarten.helpers.DialogHelper.zeigeDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -59,12 +59,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Button-Event-Handler für Anlegen neuer Lernkarte, also Navigation zu anderer Activity.
+     * Button-Event-Handler für Anlegen neuer Lernkarte, also Navigation zu anderer Activity;
+     * die Navigation wird aber nur durchgeführt, wenn es
      *
      * @param view  Button, der das Event auslöst hat.
      */
     public void onButtonLernen(View view) {
 
+        int anzahlDatensaetze = _dao.getAnzahlDatensaetze();
+        if (anzahlDatensaetze == 0) {
+
+            zeigeDialog(this, "Fehler",
+                        "Lernen ist noch nicht möglich, weil keine Lernkarten definiert sind.");
+            return;
+        }
         Intent intent = new Intent(this, LernMenueActivity.class);
         startActivity(intent);
     }

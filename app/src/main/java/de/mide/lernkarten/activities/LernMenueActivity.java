@@ -1,9 +1,13 @@
 package de.mide.lernkarten.activities;
 
+import static de.mide.lernkarten.helpers.IGlobaleKonstanten.EXTRA_KEY_LERN_MODUS;
+import static de.mide.lernkarten.helpers.LernModusEnum.NOCH_NIE_VERWENDET;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import de.mide.lernkarten.R;
 
@@ -34,6 +38,31 @@ public class LernMenueActivity extends AppCompatActivity {
      */
     public void onButtonUnbenutzt(View view) {
 
+        Intent intent = new Intent(this, ZeigeLernkarteActivity.class);
+
+        intent.putExtra(EXTRA_KEY_LERN_MODUS, NOCH_NIE_VERWENDET);
+
+        startActivity(intent);
+    }
+
+    /**
+     * Event-Handler für Button "Noch nie richtig beantwortet".
+     *
+     * @param view  Button, der Event ausgelöst hat.
+     */
+    public void onButtonNochNieRichtig(View view) {
+
+        Toast.makeText(this, "Not implemented yet :-(", Toast.LENGTH_LONG).show();
+    }
+
+    /**
+     * Event-Handler für Button, um zurück zum Hauptmenü zu gehen.
+     *
+     * @param view  Button, der Event ausgelöst hat.
+     */
+    public void onButtonHauptmenu(View view) {
+
+        finish();
     }
 
 }

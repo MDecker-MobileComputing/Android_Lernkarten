@@ -8,6 +8,9 @@ import de.mide.lernkarten.R;
 
 /**
  * Klasse enthält Hilfsmethoden für Erzeugen von Dialogen.
+ * <br><br>
+ *
+ * This file is licensed under the terms of the BSD 3-Clause License.
  */
 public class DialogHelper {
 

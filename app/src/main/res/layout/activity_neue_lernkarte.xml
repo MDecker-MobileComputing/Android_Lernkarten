@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,6 +12,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="17sp"
         android:text="@string/lernkarte_vorne" />
     <EditText
         android:id="@+id/vorneTextview"
@@ -20,6 +22,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:layout_marginTop="30dp"
         android:text="@string/lernkarte_hinten" />
     <EditText
         android:id="@+id/hintenTextview"
@@ -27,10 +31,17 @@
         android:layout_height="wrap_content"/>
 
     <Button
-        android:id="@+id/anlegenButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
         android:text="@string/neue_lernkarte_button"
         android:onClick="onButtonAnlegen" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="@string/abbrechen_button"
+        android:onClick="onButtonAbbrechen" />
 
 </LinearLayout>

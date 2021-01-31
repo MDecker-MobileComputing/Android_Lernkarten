@@ -12,6 +12,9 @@ import java.util.Date;
  * Alle Konverter-Klasse müssen in der von <code>RoomDatabase</code> abgeleiteten Klasse
  * (in diesem Projekt: {@link MeineDatenbank} mit der Annotation <code>TypeConverters</code>
  * deklariert werden.
+ * <br><br>
+ *
+ * This file is licensed under the terms of the BSD 3-Clause License.
  */
 public class MeineTypeConverter {
 

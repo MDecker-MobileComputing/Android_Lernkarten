@@ -2,13 +2,13 @@ package de.mide.lernkarten.activities;
 
 import static de.mide.lernkarten.helpers.DialogHelper.zeigeDialog;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.Date;
 
 import de.mide.lernkarten.R;
 import de.mide.lernkarten.db.LernkarteEntity;
@@ -46,7 +46,7 @@ public class NeueLernkarteActivity extends AppCompatActivity {
         MeineDatenbank db = MeineDatenbank.getSingletonInstance(this);
         _dao = db.lernkartenDao();
 
-        _vorneEditText  = findViewById(R.id.vorneTextview);
+        _vorneEditText  = findViewById(R.id.vorneTextview );
         _hintenEditText = findViewById(R.id.hintenTextview);
     }
 
@@ -82,12 +82,24 @@ public class NeueLernkarteActivity extends AppCompatActivity {
         lernkarte.anzahlFalsch  = 0;
         lernkarte.anzahlRichtig = 0;
 
+        lernkarte.dateTimeErzeugung = new Date();
+
         _dao.insertLernkarte(lernkarte);
 
         zeigeDialog(this, "Erfolg", "Datensatz wurde eingefügt.");
 
         _vorneEditText.setText("");
         _hintenEditText.setText("");
+    }
+
+    /**
+     * Event-Handler für Button "Abbrechen", kehrt zum MainActivity zurück.
+     *
+     * @param view  Button, der Event ausgelöst hat.
+     */
+    public void onButtonAbbrechen(View view) {
+
+        finish();
     }
 
 }

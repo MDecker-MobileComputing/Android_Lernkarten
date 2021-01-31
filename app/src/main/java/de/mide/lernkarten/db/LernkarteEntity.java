@@ -57,4 +57,11 @@ public class LernkarteEntity {
     @ColumnInfo(name = "datetime_falsch")
     public Date dateTimeLetztesMalFalscheAntwort;
 
+    /**
+     * Zeitstempel für Erzeugung der Lernkarte; Wert wird bei Erzeugung erstellt
+     * und ändert sich nie.
+     */
+    @ColumnInfo(name = "datetime_erzeugung")
+    public Date dateTimeErzeugung;
+
 }

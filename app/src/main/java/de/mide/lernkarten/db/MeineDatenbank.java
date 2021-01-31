@@ -1,5 +1,6 @@
 package de.mide.lernkarten.db;
 
+import static de.mide.lernkarten.helpers.IGlobaleKonstanten.TAG4LOGGING;
 import android.content.Context;
 import android.util.Log;
 
@@ -18,8 +19,6 @@ import androidx.room.TypeConverters;
 @Database(entities = {LernkarteEntity.class}, version=1)
 @TypeConverters({MeineTypeConverter.class})
 public abstract class MeineDatenbank extends RoomDatabase {
-
-    public static final String TAG4LOGGING = "MeineDatenbank";
 
     /**
      * Name der Datenbank-Datei, die von SQLite3 angelegt wird.
