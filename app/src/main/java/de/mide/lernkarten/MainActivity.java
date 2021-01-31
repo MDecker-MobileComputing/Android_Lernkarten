@@ -6,6 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import de.mide.lernkarten.activities.LernMenueActivity;
+import de.mide.lernkarten.activities.NeueLernkarteActivity;
 import de.mide.lernkarten.db.LernkartenDao;
 import de.mide.lernkarten.db.MeineDatenbank;
 
@@ -16,7 +20,7 @@ import de.mide.lernkarten.db.MeineDatenbank;
  *
  * This file is licensed under the terms of the BSD 3-Clause License.
  */
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
 
     /** DAO für Zugriff auf Tabelle mit Lernkarten. */
     private LernkartenDao _dao = null;

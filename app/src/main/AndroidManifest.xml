@@ -18,8 +18,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".LernMenueActivity"></activity>
-        <activity android:name=".NeueLernkarteActivity"></activity>
+        <activity android:name=".activities.LernMenueActivity"></activity>
+        <activity android:name=".activities.NeueLernkarteActivity"></activity>
 
     </application>
 

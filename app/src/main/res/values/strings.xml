@@ -4,6 +4,7 @@
 
     <string name="neue_lernkarte_button">Neue Lernkarte</string>
     <string name="lernen_button">Lernen/Üben</string>
+    <string name="lernmodus_unbenutzt_button">Unbenutzte Lernkarten</string>
 
     <string name="lernkarte_anlegen">Neue Lernkarte</string>
 

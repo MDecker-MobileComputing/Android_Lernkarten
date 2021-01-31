@@ -1,8 +1,11 @@
-package de.mide.lernkarten;
+package de.mide.lernkarten.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+
+import de.mide.lernkarten.R;
 
 /**
  * Activity für Menü der verschiedenen Lern-Modi.
@@ -20,6 +23,17 @@ public class LernMenueActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lern_menue);
+
+        setTitle( "Lernen / üben" );
+    }
+
+    /**
+     * Event-Handler für Button "Unbenutzte Lernkarten".
+     *
+     * @param view  Button, der Event ausgelöst hat.
+     */
+    public void onButtonUnbenutzt(View view) {
+
     }
 
 }

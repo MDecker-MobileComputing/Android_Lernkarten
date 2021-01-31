@@ -1,4 +1,4 @@
-package de.mide.lernkarten;
+package de.mide.lernkarten.activities;
 
 import static de.mide.lernkarten.helpers.DialogHelper.zeigeDialog;
 
@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import de.mide.lernkarten.R;
 import de.mide.lernkarten.db.LernkarteEntity;
 import de.mide.lernkarten.db.LernkartenDao;
 import de.mide.lernkarten.db.MeineDatenbank;
@@ -17,9 +20,9 @@ import de.mide.lernkarten.db.MeineDatenbank;
  *
  * This file is licensed under the terms of the BSD 3-Clause License.
  */
-public class NeueLernkarteActivity extends Activity {
+public class NeueLernkarteActivity extends AppCompatActivity {
 
-    /** DAO-Objekt für CRUD-Operation auf Tabelle mit Lernkarten.  */
+    /** DAO-Objekt für CRUD-Operation auf Tabelle mit Lernkarten. */
     private LernkartenDao _dao = null;
 
     /** Element zur Eingabe Text auf Vorderseite der Lernkarte. */
@@ -37,6 +40,8 @@ public class NeueLernkarteActivity extends Activity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_neue_lernkarte);
+
+        setTitle( "Neue Lernkarte" );
 
         MeineDatenbank db = MeineDatenbank.getSingletonInstance(this);
         _dao = db.lernkartenDao();

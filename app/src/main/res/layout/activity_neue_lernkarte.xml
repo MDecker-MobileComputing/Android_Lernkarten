@@ -6,7 +6,7 @@
     android:gravity="center_vertical"
     android:orientation="vertical"
     android:padding="10dp"
-    tools:context=".NeueLernkarteActivity">
+    tools:context=".activities.NeueLernkarteActivity">
 
     <TextView
         android:layout_width="match_parent"
@@ -30,7 +30,7 @@
         android:id="@+id/anlegenButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/lernen_button"
+        android:text="@string/neue_lernkarte_button"
         android:onClick="onButtonAnlegen" />
 
 </LinearLayout>
