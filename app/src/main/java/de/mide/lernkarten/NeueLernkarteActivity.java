@@ -1,6 +1,6 @@
 package de.mide.lernkarten;
 
-import androidx.appcompat.app.AppCompatActivity;
+import static de.mide.lernkarten.helpers.DialogHelper.zeigeDialog;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -46,8 +46,7 @@ public class NeueLernkarteActivity extends Activity {
 
 
     /**
-     * Event-Handler für Button zum Einfügen einer neuen Lernkarte in
-     * die Datenbak.
+     * Event-Handler für Button zum Einfügen einer neuen Lernkarte in die Datenbak.
      *
      * @param view  Button, der Event ausgelöst hat.
      */
@@ -56,11 +55,17 @@ public class NeueLernkarteActivity extends Activity {
         String textVorne  = _vorneEditText.getText().toString().trim();
         String textHinten = _hintenEditText.getText().toString().trim();
 
-        if (textVorne.length() == 0 || textHinten.length() == 0) {
+        if (textVorne.length() == 0) {
 
-            Toast.makeText(this, "Bitte Text für beide Seiten eingeben.", Toast.LENGTH_LONG).show();
+            zeigeDialog(this, "Fehler", "Kein Text für Vorderseite eingegeben.");
             return;
         }
+        if (textHinten.length() == 0) {
+
+            zeigeDialog(this, "Fehler", "Kein Text für Rückseite eingegeben.");
+            return;
+        }
+
 
         LernkartenDao dao = _meineDatenbank.lernkartenDao();
 
@@ -74,7 +79,7 @@ public class NeueLernkarteActivity extends Activity {
 
         dao.insertLernkarte(lernkarte);
 
-        Toast.makeText(this, "Datensatz wurde eingefügt.", Toast.LENGTH_LONG).show();
+        zeigeDialog(this, "Erfolg", "Datensatz wurde eingefügt.");
 
         _vorneEditText.setText("");
         _hintenEditText.setText("");
