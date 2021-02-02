@@ -149,6 +149,14 @@ public class ZeigeLernkarteActivity extends AppCompatActivity {
                 lernkarteArray = _dao.getMehrFalscheAlsRichtigeAntwortenKarte();
             break;
 
+            case SCHON_LANGE_NICHT_MEHR_RICHTIG_BEANTWORTET:
+                lernkarteArray = _dao.getKarteSchonLangeNichtMehrRichtigBeantwortet();
+            break;
+
+            case SCHON_LANGE_NICHT_MEHR_FALSCH_BEANTWORTET:
+                lernkarteArray = _dao.getKarteSchonLangeNichtFalschRichtigBeantwortet();
+            break;
+
             case ZUFAELLIG:
                 lernkarteArray = _dao.getZufaelligeLernkarte();
             break;

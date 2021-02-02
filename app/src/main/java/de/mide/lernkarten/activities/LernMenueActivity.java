@@ -4,6 +4,8 @@ import static de.mide.lernkarten.helpers.IGlobaleKonstanten.EXTRA_KEY_LERN_MODUS
 import static de.mide.lernkarten.helpers.LernModusEnum.NOCH_NIE_VERWENDET;
 import static de.mide.lernkarten.helpers.LernModusEnum.NOCH_NIE_RICHTIG_BEANTWORTET;
 import static de.mide.lernkarten.helpers.LernModusEnum.MEHR_FALSCHE_ALS_RICHTIGE_ANTWORTEN;
+import static de.mide.lernkarten.helpers.LernModusEnum.SCHON_LANGE_NICHT_MEHR_FALSCH_BEANTWORTET;
+import static de.mide.lernkarten.helpers.LernModusEnum.SCHON_LANGE_NICHT_MEHR_RICHTIG_BEANTWORTET;
 import static de.mide.lernkarten.helpers.LernModusEnum.ZUFAELLIG;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -66,6 +68,30 @@ public class LernMenueActivity extends AppCompatActivity {
 
         Intent intent = new Intent(this, ZeigeLernkarteActivity.class);
         intent.putExtra(EXTRA_KEY_LERN_MODUS, MEHR_FALSCHE_ALS_RICHTIGE_ANTWORTEN);
+        startActivity(intent);
+    }
+
+    /**
+     * Event-Handler für Button "Schon lange nicht mehr richtig beantwortet".
+     *
+     * @param view  Button, der Event ausgelöst hat.
+     */
+    public void onButtonLangeNichtMehrRichtigBeantwortet(View view) {
+
+        Intent intent = new Intent(this, ZeigeLernkarteActivity.class);
+        intent.putExtra(EXTRA_KEY_LERN_MODUS, SCHON_LANGE_NICHT_MEHR_RICHTIG_BEANTWORTET);
+        startActivity(intent);
+    }
+
+    /**
+     * Event-Handler für Button "Schon lange nicht mehr falsch beantwortet".
+     *
+     * @param view  Button, der Event ausgelöst hat.
+     */
+    public void onButtonLangeNichtMehrFalschBeantwortet(View view) {
+
+        Intent intent = new Intent(this, ZeigeLernkarteActivity.class);
+        intent.putExtra(EXTRA_KEY_LERN_MODUS, SCHON_LANGE_NICHT_MEHR_FALSCH_BEANTWORTET);
         startActivity(intent);
     }
 

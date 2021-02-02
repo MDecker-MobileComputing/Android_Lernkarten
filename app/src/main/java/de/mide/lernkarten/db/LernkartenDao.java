@@ -61,6 +61,17 @@ public interface LernkartenDao {
     public LernkarteEntity[] getUnbenutzteKarte();
 
     /**
+     * Query für {@link LernModusEnum#NOCH_NIE_RICHTIG_BEANTWORTET}.
+     * Wenn es mehrere Lernkarten gibt, für die <code>anzahl_richtig = 0</code> gilt, dann
+     * wird die zurückgeliefert, bei der die letzte falsche Antwort am längsten zurückliegt.
+     *
+     * @return  Array mit höchstens einer Lernkarte (kann aber auch leer sein).
+     *          Für diese Lernkarte gilt: <code>anzahl_richtig=0</code>
+     */
+    @Query("SELECT * FROM LernkarteEntity WHERE anzahl_richtig = 0 ORDER BY datetime_falsch ASC LIMIT 1")
+    public LernkarteEntity[] getNochNieRichtigBeantworteteKarte();
+
+    /**
      * Query für {@link LernModusEnum#MEHR_FALSCHE_ALS_RICHTIGE_ANTWORTEN}.
      * Wenn es mehrere Lernkarten gibt, für die die Anzahl der falschen Antworten echt-größer
      * als die der richtigen Antworten ist, dann wird die zurückgeliefert, bei der die
@@ -73,15 +84,22 @@ public interface LernkartenDao {
     public LernkarteEntity[] getMehrFalscheAlsRichtigeAntwortenKarte();
 
     /**
-     * Query für {@link LernModusEnum#NOCH_NIE_RICHTIG_BEANTWORTET}.
-     * Wenn es mehrere Lernkarten gibt, für die <code>anzahl_richtig = 0</code> gilt, dann
-     * wird die zurückgeliefert, bei der die letzte falsche Antwort am längsten zurückliegt.
+     * Query für {@link LernModusEnum#SCHON_LANGE_NICHT_MEHR_RICHTIG_BEANTWORTET}.
      *
-     * @return  Array mit höchstens einer Lernkarte (kann aber auch leer sein).
-     *          Für diese Lernkarte gilt: <code>anzahl_richtig=0</code>
+     * @return  Array mit Lernkarte, deren Zeitstempel für die letzte richtige Antwort am längsten
+     *          zurückliegt.
      */
-    @Query("SELECT * FROM LernkarteEntity WHERE anzahl_richtig = 0 ORDER BY datetime_falsch ASC LIMIT 1")
-    public LernkarteEntity[] getNochNieRichtigBeantworteteKarte();
+    @Query("SELECT * FROM LernkarteEntity ORDER BY datetime_richtig ASC LIMIT 1")
+    public LernkarteEntity[] getKarteSchonLangeNichtMehrRichtigBeantwortet();
+
+    /**
+     * Query für {@link LernModusEnum#SCHON_LANGE_NICHT_MEHR_FALSCH_BEANTWORTET}.
+     *
+     * @return  Array mit Lernkarte, deren Zeitstempel für die letzte falsche Antwort am längsten
+     *          zurückliegt.
+     */
+    @Query("SELECT * FROM LernkarteEntity ORDER BY datetime_falsch ASC LIMIT 1")
+    public LernkarteEntity[] getKarteSchonLangeNichtFalschRichtigBeantwortet();
 
     /**
      * Query für {@link LernModusEnum#ZUFAELLIG}.

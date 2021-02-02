@@ -27,7 +27,17 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/lernmodus_zufallskarte"
+        android:text="@string/lernmodus_lange_nicht_mehr_richtig_button"
+        android:onClick="onButtonLangeNichtMehrRichtigBeantwortet" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lernmodus_lange_nicht_mehr_falsch_button"
+        android:onClick="onButtonLangeNichtMehrFalschBeantwortet" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lernmodus_zufallskarte_button"
         android:onClick="onButtonZufallskarte" />
 
     <Button
