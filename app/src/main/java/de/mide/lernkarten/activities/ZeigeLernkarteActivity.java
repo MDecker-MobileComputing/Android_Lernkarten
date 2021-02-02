@@ -149,6 +149,10 @@ public class ZeigeLernkarteActivity extends AppCompatActivity {
                 lernkarteArray = _dao.getMehrFalscheAlsRichtigeAntwortenKarte();
             break;
 
+            case ZUFAELLIG:
+                lernkarteArray = _dao.getZufaelligeLernkarte();
+            break;
+
             default:
                 zeigeDialog( this,"Interner Fehler",
                         "Unerwarteter Wert für Lern-Modus: " + _lernModus);

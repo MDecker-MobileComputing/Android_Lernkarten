@@ -26,24 +26,19 @@ public enum LernModusEnum {
      */
     NOCH_NIE_VERWENDET,
 
-    /**
-     * Lernkarten auswählen, für die <code>anzahl_richtig=0</code> gilt.
-     */
+    /** Lernkarten auswählen, für die <code>anzahl_richtig=0</code> gilt. */
     NOCH_NIE_RICHTIG_BEANTWORTET,
 
-    /**
-     * Lernkarten auswählen, für die <code>anzahl_richtig < anzahl_falsch</code> gilt.
-     */
+    /** Lernkarten auswählen, für die <code>anzahl_richtig < anzahl_falsch</code> gilt. */
     MEHR_FALSCHE_ALS_RICHTIGE_ANTWORTEN,
 
-    /**
-     * Lernkarte aus DB holen, deren letzte richtige Beantwortung am längsten zurückliegt.
-     */
+    /** Lernkarte aus DB holen, deren letzte richtige Beantwortung am längsten zurückliegt. */
     SCHON_LANGE_NICHT_MEHR_RICHTIG_BEANTWORTET,
 
-    /**
-     * Lernkarte aus DB holen, deren letzte falsche Beantwortung am längsten zurückliegt.
-     */
-    SCHON_LANGE_NICHT_MEHR_FALSCH_BEANTWORTET
+    /** Lernkarte aus DB holen, deren letzte falsche Beantwortung am längsten zurückliegt. */
+    SCHON_LANGE_NICHT_MEHR_FALSCH_BEANTWORTET,
+
+    /** Eine Lernkarte zufällig auswählen. */
+    ZUFAELLIG;
 
 }

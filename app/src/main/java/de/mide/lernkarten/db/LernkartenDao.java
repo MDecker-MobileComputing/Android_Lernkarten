@@ -82,7 +82,12 @@ public interface LernkartenDao {
      */
     @Query("SELECT * FROM LernkarteEntity WHERE anzahl_richtig = 0 ORDER BY datetime_falsch ASC LIMIT 1")
     public LernkarteEntity[] getNochNieRichtigBeantworteteKarte();
-    
+
+    /**
+     * Query für {@link LernModusEnum#ZUFAELLIG}.
+     *
+     * @return  Array mit einer zufällig ausgewählten Lernkarte.
+     */
     @Query("SELECT * FROM LernkarteEntity ORDER BY RANDOM() LIMIT 1")
     public LernkarteEntity[] getZufaelligeLernkarte();
 
