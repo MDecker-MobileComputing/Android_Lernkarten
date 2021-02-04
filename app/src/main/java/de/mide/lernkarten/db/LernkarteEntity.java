@@ -22,10 +22,15 @@ import java.util.Date;
 @Entity
 public class LernkarteEntity {
 
-    /** Eindeutiger Schlüssel (Unique ID) der Lernkarte, wird automatisch befüllt. */
+    /**
+     * Eindeutiger Schlüssel der Lernkarte, wird automatisch befüllt; Spaltenname "_id"
+     * gewählt, weil die für die Listendarstellung verwendete Klasse <code>CursorAdapter</code>
+     * dies so erwartet.
+     */
     @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "_id")
     @NonNull
-    public int uid;
+    public int id;
 
     /** Text auf Vorderseite der Lernkarte, z.B. mit Frage. */
     @ColumnInfo(name = "text_vorne")

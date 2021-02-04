@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Lernkarten">
-        <activity android:name=".activities.ZeigeLernkarteActivity"></activity>
+        <activity android:name=".activities.ListenActivity"></activity>
+        <activity android:name=".activities.ZeigeLernkarteActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

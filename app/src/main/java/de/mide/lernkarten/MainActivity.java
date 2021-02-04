@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import de.mide.lernkarten.activities.LernMenueActivity;
+import de.mide.lernkarten.activities.ListenActivity;
 import de.mide.lernkarten.activities.NeueLernkarteActivity;
 import de.mide.lernkarten.db.LernkartenDao;
 import de.mide.lernkarten.db.MeineDatenbank;
@@ -67,6 +68,18 @@ public class MainActivity extends AppCompatActivity {
     public void onButtonNeueLernkarte(View view) {
 
         Intent intent = new Intent(this, NeueLernkarteActivity.class);
+        startActivity(intent);
+    }
+
+    /**
+     * Button-Event-Handler für Nativation zur Activity, auf der alle Lernkarten in Form
+     * einer Liste angezeigt werden.
+     *
+     * @param view  Button, der das Event auslöst hat.
+     */
+    public void onButtonListe(View view) {
+
+        Intent intent = new Intent(this, ListenActivity.class);
         startActivity(intent);
     }
 

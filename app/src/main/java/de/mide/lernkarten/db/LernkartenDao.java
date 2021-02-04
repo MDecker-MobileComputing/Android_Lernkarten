@@ -1,5 +1,7 @@
 package de.mide.lernkarten.db;
 
+import android.database.Cursor;
+
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
@@ -108,5 +110,13 @@ public interface LernkartenDao {
      */
     @Query("SELECT * FROM LernkarteEntity ORDER BY RANDOM() LIMIT 1")
     public LernkarteEntity[] getZufaelligeLernkarte();
+
+    /**
+     * Query für Listendarstellung; liefert ein {@link Cursor}-Objekt zurück.
+     *
+     * @return  Cursor-Objekt, da die Liste aller Lernkarten repräsentiert.
+     */
+    @Query("SELECT * FROM LernkarteEntity ORDER BY datetime_erzeugung ASC")
+    public Cursor getCursorFuerListe();
 
 }

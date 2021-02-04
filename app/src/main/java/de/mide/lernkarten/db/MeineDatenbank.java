@@ -14,9 +14,13 @@ import androidx.room.TypeConverters;
  * Die Datenbank-Klasse enthält eine Getter-Methode für die DAOs.
  * <br><br>
  *
+ * Für <code>exportSchema=false</code> siehe
+ * <a href="https://stackoverflow.com/questions/44322178/">diese Antwort.</a>
+ * <br><br>
+ *
  * This file is licensed under the terms of the BSD 3-Clause License.
  */
-@Database(entities = {LernkarteEntity.class}, version=1)
+@Database(entities = {LernkarteEntity.class}, version=1, exportSchema = false)
 @TypeConverters({MeineTypeConverter.class})
 public abstract class MeineDatenbank extends RoomDatabase {
 
