@@ -92,26 +92,11 @@ public class MeinCursorAdapter extends CursorAdapter {
         String textVorne  = cursor.getString( _columnIndexVorne  );
         String textHinten = cursor.getString( _columnIndexHinten );
 
-        TextView vorneTextView  = view.findViewById( R.id.vorneTextView  );
-        TextView hintenTextView = view.findViewById( R.id.hintenTextview );
+        TextView vorneTextView  = view.findViewById( R.id.vorderseiteListeintragTextView );
+        TextView hintenTextView = view.findViewById( R.id.rueckseiteListeintragTextView  );
 
-        if (vorneTextView  != null) {
-
-            vorneTextView.setText(textVorne);
-
-        } else {
-
-            Log.w(TAG4LOGGING, "Keine Referenz auf vorneTextView.");
-        }
-
-        if (hintenTextView != null) {
-
-            hintenTextView.setText(textHinten);
-
-        } else {
-
-            Log.w(TAG4LOGGING, "Keine Referenz auf hintenTextview.");
-        }
+        vorneTextView.setText(  textVorne );
+        hintenTextView.setText( textHinten);
     }
 
 }
