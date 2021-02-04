@@ -114,7 +114,8 @@ public interface LernkartenDao {
     /**
      * Query für Listendarstellung; liefert ein {@link Cursor}-Objekt zurück.
      *
-     * @return  Cursor-Objekt, da die Liste aller Lernkarten repräsentiert.
+     * @return  Cursor-Objekt, das die Liste aller Lernkarten repräsentiert;
+     *          Einträge sind aufsteigend nach Datum der Erzeugung sortiert.
      */
     @Query("SELECT * FROM LernkarteEntity ORDER BY datetime_erzeugung ASC")
     public Cursor getCursorFuerListe();

@@ -2,12 +2,17 @@ package de.mide.lernkarten.helpers;
 
 import de.mide.lernkarten.R;
 
+import static de.mide.lernkarten.helpers.IGlobaleKonstanten.TAG4LOGGING;
+
 import android.content.Context;
 import android.database.Cursor;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CursorAdapter;
+import android.widget.TextView;
+
 import static android.content.Context.LAYOUT_INFLATER_SERVICE;
 
 /**
@@ -23,8 +28,14 @@ import static android.content.Context.LAYOUT_INFLATER_SERVICE;
  */
 public class MeinCursorAdapter extends CursorAdapter {
 
-    /** Wird benötigt, um Layout "aufzublasen". */
+    /** Wird benötigt, um Layout für einzelne Zeile "aufzublasen". */
     private LayoutInflater _inflater = null;
+
+    /** Index von Spalte mit Text für Vorderseite. */
+    private int _columnIndexVorne = -1;
+
+    /** Index von Spalte mit Text für Rückseite. */
+    private int _columnIndexHinten = -1;
 
     /**
      * Konstruktor, übergibt Argumente an Super-Konstruktor und holt {@link LayoutInflater}.
@@ -40,6 +51,12 @@ public class MeinCursorAdapter extends CursorAdapter {
         super(context, cursor, flags);
 
         _inflater = (LayoutInflater) context.getSystemService(LAYOUT_INFLATER_SERVICE);
+
+        _columnIndexVorne  = cursor.getColumnIndex("text_vorne");
+        _columnIndexHinten = cursor.getColumnIndex("text_hinten");
+
+        Log.i(TAG4LOGGING, "columnIndexVorne=" + _columnIndexVorne +
+                                 ", columnIndexHinten=" + _columnIndexHinten);
     }
 
     /**
@@ -56,8 +73,7 @@ public class MeinCursorAdapter extends CursorAdapter {
     @Override
     public View newView(Context context, Cursor cursor, ViewGroup parent) {
 
-        //return _inflater.inflate(R.layout.listview_eintrag, parent, false); // attachToRoot=false
-        return null;
+        return _inflater.inflate(R.layout.listview_eintrag, parent, false); // attachToRoot=false
     }
 
     /**
@@ -73,11 +89,29 @@ public class MeinCursorAdapter extends CursorAdapter {
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
 
-        /*
-        TextView textView = view.findViewById(R.id.wifiNameTextview);
-        String ssid = cursor.getString( _colIndexSsid );
-        textView.setText(ssid);
-        */
+        String textVorne  = cursor.getString( _columnIndexVorne  );
+        String textHinten = cursor.getString( _columnIndexHinten );
+
+        TextView vorneTextView  = view.findViewById( R.id.vorneTextView  );
+        TextView hintenTextView = view.findViewById( R.id.hintenTextview );
+
+        if (vorneTextView  != null) {
+
+            vorneTextView.setText(textVorne);
+
+        } else {
+
+            Log.w(TAG4LOGGING, "Keine Referenz auf vorneTextView.");
+        }
+
+        if (hintenTextView != null) {
+
+            hintenTextView.setText(textHinten);
+
+        } else {
+
+            Log.w(TAG4LOGGING, "Keine Referenz auf hintenTextview.");
+        }
     }
 
 }

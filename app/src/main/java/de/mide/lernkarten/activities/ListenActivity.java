@@ -3,9 +3,14 @@ package de.mide.lernkarten.activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import de.mide.lernkarten.R;
+import de.mide.lernkarten.db.LernkartenDao;
+import de.mide.lernkarten.db.MeineDatenbank;
+import de.mide.lernkarten.helpers.MeinCursorAdapter;
 
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ListView;
 
 /**
  * Activity zur Darstellung aller Lernkarten als Liste.
@@ -25,6 +30,15 @@ public class ListenActivity extends AppCompatActivity {
         setContentView(R.layout.activity_liste);
 
         setTitle("Liste aller Lernkarten");
+
+        MeineDatenbank datenbank = MeineDatenbank.getSingletonInstance(this);
+        LernkartenDao lernkartenDao = datenbank.lernkartenDao();
+        Cursor cursor = lernkartenDao.getCursorFuerListe();
+
+        MeinCursorAdapter cursorAdapter = new MeinCursorAdapter( this, cursor, 0); // flags=0
+
+        ListView listView = findViewById(R.id.lernkartenListView);
+        listView.setAdapter(cursorAdapter);
     }
 
     /**

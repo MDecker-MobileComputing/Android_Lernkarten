@@ -5,6 +5,13 @@
     android:layout_height="match_parent"
     android:padding="5dp">
 
+    <ListView
+        android:id="@+id/lernkartenListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFF00"
+        android:layout_marginTop="20dp" />
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
