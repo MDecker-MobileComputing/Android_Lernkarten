@@ -26,6 +26,12 @@
         android:text="@string/lernkarten_liste_button"
         android:layout_marginTop="10dp"
         android:onClick="onButtonListe" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lernkarten_alle_loeschen"
+        android:layout_marginTop="25dp"
+        android:onClick="onButtonAlleLoeschen" />
 
     <TextView
         android:id="@+id/anzahlTextView"
