@@ -136,8 +136,7 @@ public class MainActivity extends AppCompatActivity {
 
                 _datenbank.clearAllTables();
 
-                int anzahl = _dao.getAnzahlDatensaetze();
-                _anzahlTextView.setText("Anzahl Lernkarten: " + anzahl);
+                _anzahlTextView.setText("Anzahl Lernkarten: 0");
             }
         } ;
 
