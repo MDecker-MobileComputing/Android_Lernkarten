@@ -1,6 +1,6 @@
 # Android-App "Lernkarten" #
 
-Simple Android app as example for persistence with [Room](https://developer.android.com/training/data-storage/room/), which is an object-relational mapper provided by Android.
+Simple Android app as example for persistence with [Room](https://developer.android.com/training/data-storage/room/) (Android's object-relational mapper), which is an object-relational mapper provided by Android.
 
 <br>
 
