@@ -1,6 +1,11 @@
 package de.mide.lernkarten;
 
 import static de.mide.lernkarten.helpers.DialogHelper.zeigeDialog;
+
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
+
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -23,6 +28,14 @@ import de.mide.lernkarten.db.MeineDatenbank;
  */
 public class MainActivity extends AppCompatActivity {
 
+    /**
+     * Referenz auf Instanz von Unterklasse von <code>RoomDatabase</code>;
+     * wird nicht nur holen von DAO-Referenz benötigt, sondern auch für
+     * Aufruf Methode <code>clearAllTables()</code> um alle Tabelleneinträge
+     * zu löschen.
+     */
+    private MeineDatenbank _datenbank = null;
+
     /** DAO für Zugriff auf Tabelle mit Lernkarten. */
     private LernkartenDao _dao = null;
 
@@ -41,8 +54,8 @@ public class MainActivity extends AppCompatActivity {
 
         _anzahlTextView = findViewById(R.id.anzahlTextView);
 
-        MeineDatenbank db = MeineDatenbank.getSingletonInstance(this);
-        _dao = db.lernkartenDao();
+        _datenbank = MeineDatenbank.getSingletonInstance(this);
+        _dao = _datenbank.lernkartenDao();
     }
 
     /**
@@ -100,6 +113,42 @@ public class MainActivity extends AppCompatActivity {
         }
         Intent intent = new Intent(this, LernMenueActivity.class);
         startActivity(intent);
+    }
+
+    /**
+     * Button-Event-Handler für Löschen aller Lernkarten (nach Sicherheitsabfrage).
+     *
+     * @param view  Button, der das Event auslöst hat.
+     */
+    public void onButtonAlleLoeschen(View view) {
+
+        int anzahlDatensaetze = _dao.getAnzahlDatensaetze();
+        if (anzahlDatensaetze == 0) {
+
+            zeigeDialog(this, "Fehler",
+                    "Datenbank ist leer, es gibt nichts zu löschen.");
+            return;
+        }
+
+        OnClickListener onJaButtonListener = new OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                _datenbank.clearAllTables();
+
+                _anzahlTextView.setText("Anzahl Lernkarten: 0");
+            }
+        } ;
+
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+        dialogBuilder.setTitle("Sicherheitsabfrage");
+        dialogBuilder.setMessage("Wollen Sie wirklich alle gespeicherten Lernkarten löschen?");
+
+        dialogBuilder.setPositiveButton( "Ja, alle löschen", onJaButtonListener);
+        dialogBuilder.setNegativeButton("Abbrechen", null);
+
+        AlertDialog dialog = dialogBuilder.create();
+        dialog.show();
     }
 
 }

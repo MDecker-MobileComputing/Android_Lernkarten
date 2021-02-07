@@ -5,6 +5,7 @@
     <string name="neue_lernkarten_button">Lernkarten anlegen</string>
     <string name="lernkarte_erzeugen_button">Lernkarte erzeugen</string>
     <string name="lernkarten_liste_button">Liste aller lernkarten</string>
+    <string name="lernkarten_alle_loeschen">Alle Lernkarten löschen</string>
 
     <string name="lernen_button">Lernen/Üben</string>
     <string name="lernmodus_unbenutzt_button">Unbenutzte Lernkarten</string>
