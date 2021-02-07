@@ -145,7 +145,7 @@ public class MainActivity extends AppCompatActivity {
         dialogBuilder.setTitle("Sicherheitsabfrage");
         dialogBuilder.setMessage("Wollen Sie wirklich alle gespeicherten Lernkarten löschen?");
 
-        dialogBuilder.setPositiveButton( "Ja, alle löschen", onJaButtonListener );
+        dialogBuilder.setPositiveButton( "Ja, alle löschen", onJaButtonListener);
         dialogBuilder.setNegativeButton("Abbrechen", null);
 
         AlertDialog dialog = dialogBuilder.create();
