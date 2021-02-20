@@ -15,7 +15,7 @@ import androidx.room.TypeConverters;
  * <br><br>
  *
  * Für <code>exportSchema=false</code> siehe
- * <a href="https://stackoverflow.com/questions/44322178/">diese Antwort.</a>
+ * <a href="https://stackoverflow.com/questions/44322178/">diese Antwort</a>.
  * <br><br>
  *
  * This file is licensed under the terms of the BSD 3-Clause License.

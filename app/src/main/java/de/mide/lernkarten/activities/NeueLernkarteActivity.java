@@ -17,6 +17,7 @@ import de.mide.lernkarten.db.MeineDatenbank;
 
 /**
  * Activity, um weitere Lernkarte der Datenbank hinzuzufügen.
+ * <br><br>
  *
  * This file is licensed under the terms of the BSD 3-Clause License.
  */
@@ -52,7 +53,7 @@ public class NeueLernkarteActivity extends AppCompatActivity {
 
 
     /**
-     * Event-Handler für Button zum Einfügen einer neuen Lernkarte in die Datenbak.
+     * Event-Handler für Button zum Einfügen einer neuen Lernkarte in die Datenbank.
      *
      * @param view  Button, der Event ausgelöst hat.
      */
@@ -71,7 +72,6 @@ public class NeueLernkarteActivity extends AppCompatActivity {
             zeigeDialog(this, "Fehler", "Kein Text für Rückseite eingegeben.");
             return;
         }
-
 
         // Datensatz für Lernkarte in Tabelle einfügen
         LernkarteEntity lernkarte = new LernkarteEntity();
@@ -93,7 +93,7 @@ public class NeueLernkarteActivity extends AppCompatActivity {
     }
 
     /**
-     * Event-Handler für Button "Abbrechen", kehrt zum MainActivity zurück.
+     * Event-Handler für Button "Abbrechen", kehrt zu MainActivity zurück.
      *
      * @param view  Button, der Event ausgelöst hat.
      */

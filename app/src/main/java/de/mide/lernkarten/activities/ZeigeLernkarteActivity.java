@@ -44,7 +44,7 @@ public class ZeigeLernkarteActivity extends AppCompatActivity {
     private LernModusEnum _lernModus;
 
     /**
-     * Aktuell ausgewählte Lernkarte; kann <code>null</code> sein, nämlich dann wenn
+     * Aktuell ausgewählte Lernkarte; kann <code>null</code> sein, nämlich dann, wenn
      * es für den gewählten Lernmodus keine Karten gibt (z.B. keine unbenutzten Karten).
      */
     private LernkarteEntity _lernkarteEntity = null;
@@ -198,7 +198,8 @@ public class ZeigeLernkarteActivity extends AppCompatActivity {
     }
 
     /**
-     * Event-Handler für Button, um die Karte "umzudrehen".
+     * Event-Handler für Button, um die Karte "umzudrehen", also die Rückseite mit der
+     * Antwort aufzudecken.
      *
      * @param view  Button, der Event ausgelöst hat.
      */
