@@ -16,8 +16,8 @@ import android.widget.TextView;
 import static android.content.Context.LAYOUT_INFLATER_SERVICE;
 
 /**
- * Adapter-Objekt zur Verbindung zwischen Cursor-Objekt mit allen Lernkarten von Datenbank
- * und Liste zur Darstellung.
+ * Adapter-Objekt zur Verbindung zwischen Cursor-Objekt mit allen Lernkarten von Datenbank und
+ * Liste zur Darstellung.
  *
  * Siehe
  * <a href="https://coderwall.com/p/fmavhg/android-cursoradapter-with-custom-layout-and-how-to-use-it">hier</a>
@@ -66,7 +66,7 @@ public class MeinCursorAdapter extends CursorAdapter {
      *
      * @param cursor  DB-Cursor, wird nicht benötigt.
      *
-     * @param parent  Wird nicht benötigt.
+     * @param parent  Parent-Layout.
      *
      * @return  Neues View für einen Listen-Eintrag ("Zeile").
      */
