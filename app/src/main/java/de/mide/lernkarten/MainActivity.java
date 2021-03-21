@@ -138,13 +138,13 @@ public class MainActivity extends AppCompatActivity {
 
                 _anzahlTextView.setText("Anzahl Lernkarten: 0");
             }
-        } ;
+        };
 
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
         dialogBuilder.setTitle("Sicherheitsabfrage");
         dialogBuilder.setMessage("Wollen Sie wirklich alle gespeicherten Lernkarten löschen?");
 
-        dialogBuilder.setPositiveButton( "Ja, alle löschen", onJaButtonListener);
+        dialogBuilder.setPositiveButton("Ja, alle löschen", onJaButtonListener);
         dialogBuilder.setNegativeButton("Abbrechen", null);
 
         AlertDialog dialog = dialogBuilder.create();
