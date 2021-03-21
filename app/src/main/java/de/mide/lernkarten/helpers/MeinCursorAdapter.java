@@ -40,11 +40,11 @@ public class MeinCursorAdapter extends CursorAdapter {
     /**
      * Konstruktor, übergibt Argumente an Super-Konstruktor und holt {@link LayoutInflater}.
      *
-     * @param context  Referenz auf Activity
+     * @param context  Referenz auf Activity.
      *
-     * @param cursor  Cursor, der darzustellende Datensätze repräsentiert
+     * @param cursor  Cursor, der darzustellende Datensätze repräsentiert.
      *
-     * @param flags  Attribute, um Verhalten von Adapter zu steuern
+     * @param flags  Attribute, um Verhalten von Adapter zu steuern.
      */
     public MeinCursorAdapter(Context context, Cursor cursor, int flags) {
 
