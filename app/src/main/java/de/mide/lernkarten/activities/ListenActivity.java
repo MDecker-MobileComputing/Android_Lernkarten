@@ -31,9 +31,9 @@ public class ListenActivity extends AppCompatActivity {
 
         setTitle("Liste aller Lernkarten");
 
-        MeineDatenbank datenbank = MeineDatenbank.getSingletonInstance(this);
-        LernkartenDao lernkartenDao = datenbank.lernkartenDao();
-        Cursor cursor = lernkartenDao.getCursorFuerListe();
+        MeineDatenbank datenbank     = MeineDatenbank.getSingletonInstance(this);
+        LernkartenDao  lernkartenDao = datenbank.lernkartenDao();
+        Cursor         cursor        = lernkartenDao.getCursorFuerListe();
 
         MeinCursorAdapter cursorAdapter = new MeinCursorAdapter( this, cursor, 0); // flags=0
 
