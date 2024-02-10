@@ -34,12 +34,14 @@ public abstract class MeineDatenbank extends RoomDatabase {
     /** Referenz auf Singleton-Instanz, wird erst bei Bedarf erzeugt (lazy creation). */
     private static MeineDatenbank SINGLETON_INSTANCE = null;
 
+
     /**
      * Getter für Lernkarten-DAO.
      *
      * @return  Lernkarten-DAO für Ausführung CRUD-Operation auf Tabelle mit Lernkarten.
      */
     public abstract LernkartenDao lernkartenDao();
+
 
     /**
      * Getter für Singleton-Instanz der vorliegenden Klasse; bei Bedarf wird diese Instanz

@@ -4,7 +4,7 @@
 
     <string name="neue_lernkarten_button">Lernkarten anlegen</string>
     <string name="lernkarte_erzeugen_button">Lernkarte erzeugen</string>
-    <string name="lernkarten_liste_button">Liste aller lernkarten</string>
+    <string name="lernkarten_liste_button">Liste aller Lernkarten</string>
     <string name="lernkarten_alle_loeschen">Alle Lernkarten löschen</string>
 
     <string name="lernen_button">Lernen/Üben</string>
@@ -32,6 +32,7 @@
 
     <string name="weiter_button">Weiter</string>
     <string name="title_activity_listen">ListenActivity</string>
+
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>

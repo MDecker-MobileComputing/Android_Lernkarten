@@ -15,6 +15,7 @@ import android.view.View;
 
 import de.mide.room.lernkarten.R;
 
+
 /**
  * Activity für Auswahl eines Lern-Modus.
  * <br><br>
@@ -35,6 +36,7 @@ public class LernMenueActivity extends AppCompatActivity {
         setTitle( "Lernen / üben" );
     }
 
+
     /**
      * Event-Handler für Button "Unbenutzte Lernkarten".
      *
@@ -46,6 +48,7 @@ public class LernMenueActivity extends AppCompatActivity {
         intent.putExtra(EXTRA_KEY_LERN_MODUS, NOCH_NIE_VERWENDET);
         startActivity(intent);
     }
+
 
     /**
      * Event-Handler für Button "Noch nie richtig beantwortet".
@@ -59,6 +62,7 @@ public class LernMenueActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+
     /**
      * Event-Handler für Button "Mehr falsche als richtige Antworten.
      *
@@ -70,6 +74,7 @@ public class LernMenueActivity extends AppCompatActivity {
         intent.putExtra(EXTRA_KEY_LERN_MODUS, MEHR_FALSCHE_ALS_RICHTIGE_ANTWORTEN);
         startActivity(intent);
     }
+
 
     /**
      * Event-Handler für Button "Schon lange nicht mehr richtig beantwortet".
@@ -83,6 +88,7 @@ public class LernMenueActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+
     /**
      * Event-Handler für Button "Schon lange nicht mehr falsch beantwortet".
      *
@@ -95,6 +101,7 @@ public class LernMenueActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+
     /**
      * Event-Handler für Button "Zufällige Lernkarten".
      *
@@ -106,6 +113,7 @@ public class LernMenueActivity extends AppCompatActivity {
         intent.putExtra(EXTRA_KEY_LERN_MODUS, ZUFAELLIG);
         startActivity(intent);
     }
+
 
     /**
      * Event-Handler für Button, um zurück zum Hauptmenü zu gehen.

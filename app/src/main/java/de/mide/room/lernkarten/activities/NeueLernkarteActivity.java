@@ -92,6 +92,7 @@ public class NeueLernkarteActivity extends AppCompatActivity {
         _hintenEditText.setText("");
     }
 
+
     /**
      * Event-Handler für Button "Abbrechen", kehrt zu MainActivity zurück.
      *

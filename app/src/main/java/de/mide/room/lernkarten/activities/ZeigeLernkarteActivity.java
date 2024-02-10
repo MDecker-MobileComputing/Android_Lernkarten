@@ -107,6 +107,7 @@ public class ZeigeLernkarteActivity extends AppCompatActivity {
         holeLernkarte();
     }
 
+
     /**
      * Setzt Titel der Activity, der Anzahl der bearbeiteten Karten enthält.
      */
@@ -115,6 +116,7 @@ public class ZeigeLernkarteActivity extends AppCompatActivity {
         String titel = "Lernen / Üben (Karten: " + _lernkartenZaehler + ")";
         setTitle(titel);
     }
+
 
     /**
      * Holt eine (weitere) Lernkarte aus der Datenbank für den aktuellen Lernmodus
@@ -197,6 +199,7 @@ public class ZeigeLernkarteActivity extends AppCompatActivity {
         }
     }
 
+
     /**
      * Event-Handler für Button, um die Karte "umzudrehen", also die Rückseite mit der
      * Antwort aufzudecken.
@@ -221,6 +224,7 @@ public class ZeigeLernkarteActivity extends AppCompatActivity {
         _umdrehenButton.setVisibility(INVISIBLE);
     }
 
+
     /**
      * Event-Handler für Button, mit der Nutzer eingibt, dass er die richtige Antwort wusste.
      * Das Lernkarten-Objekt in der DB-Tabelle wird entsprechend aktualisiert; danach wird die
@@ -237,6 +241,7 @@ public class ZeigeLernkarteActivity extends AppCompatActivity {
         holeLernkarte();
     }
 
+
     /**
      * Event-Handler für Button, mit der Nutzer eingibt, dass er NICHT die richtige Antwort wusste.
      * Das Lernkarten-Objekt in der DB-Tabelle wird entsprechend aktualisiert; danach wird die
@@ -252,6 +257,7 @@ public class ZeigeLernkarteActivity extends AppCompatActivity {
 
         holeLernkarte();
     }
+
 
     /**
      * Event-Handler für Button, mit dem der Lernmodus beendet wird, also zur Activity mit

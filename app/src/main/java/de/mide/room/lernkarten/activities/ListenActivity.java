@@ -41,6 +41,7 @@ public class ListenActivity extends AppCompatActivity {
         listView.setAdapter(cursorAdapter);
     }
 
+
     /**
      * Event-Handler für Button "Abbrechen", kehrt zum MainActivity zurück.
      *

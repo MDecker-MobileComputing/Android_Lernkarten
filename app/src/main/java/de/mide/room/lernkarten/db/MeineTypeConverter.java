@@ -31,6 +31,7 @@ public class MeineTypeConverter {
         return value == null ? null : new Date(value);
     }
 
+
     /**
      * Wandelt {@code Date}-Objekt in {@code long}-Wert um, der in Datenbank gespeichert
      * wird.

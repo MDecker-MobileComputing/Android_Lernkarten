@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         _dao = _datenbank.lernkartenDao();
     }
 
+
     /**
      * Lifecycle-Methode zur Aktualisierung der Anzeige mit der Anzahl der derzeit
      * in der DB gespeicherten Lernkarten. Diese Lifecycle-Methode wird aufgerufen,
@@ -72,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
         _anzahlTextView.setText("Anzahl Lernkarten: " + anzahl);
     }
 
+
     /**
      * Button-Event-Handler für Anlegen neuer Lernkarte, also Navigation zu anderer
      * Activity.
@@ -84,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+
     /**
      * Button-Event-Handler für Nativation zur Activity, auf der alle Lernkarten in Form
      * einer Liste angezeigt werden.
@@ -95,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ListenActivity.class);
         startActivity(intent);
     }
+
 
     /**
      * Button-Event-Handler für Anlegen neuer Lernkarte, also Navigation zu anderer Activity;
@@ -114,6 +118,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, LernMenueActivity.class);
         startActivity(intent);
     }
+
 
     /**
      * Button-Event-Handler für Löschen aller Lernkarten (nach Sicherheitsabfrage).
