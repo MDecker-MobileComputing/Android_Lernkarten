@@ -1,5 +1,7 @@
 # Android-App "Lernkarten" #
 
+<br>
+
 Simple Android app as example for persistence with [Room](https://developer.android.com/training/data-storage/room/) 
 (Android's object-relational mapper), which is an object-relational mapper provided by Android.
 
@@ -14,9 +16,9 @@ for a further example on how to use the *Room Persistence Library*.
 
 <br>
 
-![Screenshot 1](screenshot_1.png)  ![Screenshot 2](screenshot_2.png)
+![Screenshot 1](screenshot_1.png) &nbsp; ![Screenshot 2](screenshot_2.png)
 
-![Screenshot 3](screenshot_3.png)  ![Screenshot 4](screenshot_4.png)
+![Screenshot 3](screenshot_3.png) &nbsp; ![Screenshot 4](screenshot_4.png)
 
 ![Screenshot 5](screenshot_5.png)
 
