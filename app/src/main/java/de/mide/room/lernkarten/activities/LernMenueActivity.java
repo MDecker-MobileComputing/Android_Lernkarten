@@ -64,7 +64,7 @@ public class LernMenueActivity extends AppCompatActivity {
 
 
     /**
-     * Event-Handler für Button "Mehr falsche als richtige Antworten.
+     * Event-Handler für Button "Mehr falsche als richtige Antworten".
      *
      * @param view  Button, der Event ausgelöst hat.
      */
