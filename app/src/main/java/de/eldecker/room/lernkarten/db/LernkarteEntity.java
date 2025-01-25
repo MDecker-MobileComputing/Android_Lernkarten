@@ -1,4 +1,4 @@
-package de.mide.room.lernkarten.db;
+package de.eldecker.room.lernkarten.db;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
@@ -6,6 +6,7 @@ import androidx.room.PrimaryKey;
 import androidx.room.Entity;
 
 import java.util.Date;
+
 
 /**
  * Entity für Lernkarten-Datensätze/Objekte.

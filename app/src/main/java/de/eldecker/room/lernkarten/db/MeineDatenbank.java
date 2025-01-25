@@ -1,6 +1,6 @@
-package de.mide.room.lernkarten.db;
+package de.eldecker.room.lernkarten.db;
 
-import static de.mide.room.lernkarten.helferlein.IGlobaleKonstanten.TAG4LOGGING;
+import static de.eldecker.room.lernkarten.helferlein.IGlobaleKonstanten.TAG4LOGGING;
 
 import android.content.Context;
 import android.util.Log;
@@ -9,6 +9,7 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
+
 
 /**
  * Die Datenbank-Klasse enthält eine Getter-Methode für die DAOs.

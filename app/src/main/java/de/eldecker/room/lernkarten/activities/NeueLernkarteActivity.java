@@ -1,6 +1,6 @@
-package de.mide.room.lernkarten.activities;
+package de.eldecker.room.lernkarten.activities;
 
-import static de.mide.room.lernkarten.helferlein.DialogHelper.zeigeDialog;
+import static de.eldecker.room.lernkarten.helferlein.DialogHelper.zeigeDialog;
 
 import android.os.Bundle;
 import android.view.View;
@@ -10,10 +10,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Date;
 
-import de.mide.room.lernkarten.R;
-import de.mide.room.lernkarten.db.LernkarteEntity;
-import de.mide.room.lernkarten.db.LernkartenDao;
-import de.mide.room.lernkarten.db.MeineDatenbank;
+import de.eldecker.room.lernkarten.R;
+import de.eldecker.room.lernkarten.db.LernkarteEntity;
+import de.eldecker.room.lernkarten.db.LernkartenDao;
+import de.eldecker.room.lernkarten.db.MeineDatenbank;
+
 
 /**
  * Activity, um weitere Lernkarte der Datenbank hinzuzufügen.

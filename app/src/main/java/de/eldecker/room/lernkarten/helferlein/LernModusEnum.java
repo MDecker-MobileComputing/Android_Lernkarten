@@ -1,4 +1,5 @@
-package de.mide.room.lernkarten.helferlein;
+package de.eldecker.room.lernkarten.helferlein;
+
 
 /**
  * Eigener Aufzählungstyp für die verschiedenen Lern-Modi. Ein Lern-Modus legt fest,

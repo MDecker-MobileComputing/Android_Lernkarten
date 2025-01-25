@@ -1,8 +1,9 @@
-package de.mide.room.lernkarten.db;
+package de.eldecker.room.lernkarten.db;
 
 import androidx.room.TypeConverter;
 
 import java.util.Date;
+
 
 /**
  * Die Methoden in dieser Klasse wandeln in den Entity-Klassen verwendete Datentypen, die

@@ -1,16 +1,17 @@
-package de.mide.room.lernkarten.activities;
+package de.eldecker.room.lernkarten.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import de.mide.room.lernkarten.R;
-import de.mide.room.lernkarten.db.LernkartenDao;
-import de.mide.room.lernkarten.db.MeineDatenbank;
-import de.mide.room.lernkarten.helferlein.MeinCursorAdapter;
+import de.eldecker.room.lernkarten.R;
+import de.eldecker.room.lernkarten.db.LernkartenDao;
+import de.eldecker.room.lernkarten.db.MeineDatenbank;
+import de.eldecker.room.lernkarten.helferlein.MeinCursorAdapter;
 
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
+
 
 /**
  * Activity zur Darstellung aller Lernkarten als Liste.

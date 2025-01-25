@@ -1,4 +1,5 @@
-package de.mide.room.lernkarten.helferlein;
+package de.eldecker.room.lernkarten.helferlein;
+
 
 /**
  * Sammlung von globalen Konstanten für die ganze App.

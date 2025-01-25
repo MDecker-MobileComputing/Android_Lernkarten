@@ -1,4 +1,4 @@
-package de.mide.room.lernkarten.db;
+package de.eldecker.room.lernkarten.db;
 
 import android.database.Cursor;
 
@@ -7,7 +7,8 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
-import de.mide.room.lernkarten.helferlein.LernModusEnum;
+import de.eldecker.room.lernkarten.helferlein.LernModusEnum;
+
 
 /**
  * Interface aus dem das DAO erzeugt wird (DAO: Data Access Object), siehe auch die Doku

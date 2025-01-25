@@ -1,8 +1,8 @@
-package de.mide.room.lernkarten.helferlein;
+package de.eldecker.room.lernkarten.helferlein;
 
-import de.mide.room.lernkarten.R;
+import de.eldecker.room.lernkarten.R;
 
-import static de.mide.room.lernkarten.helferlein.IGlobaleKonstanten.TAG4LOGGING;
+import static de.eldecker.room.lernkarten.helferlein.IGlobaleKonstanten.TAG4LOGGING;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -14,6 +14,7 @@ import android.widget.CursorAdapter;
 import android.widget.TextView;
 
 import static android.content.Context.LAYOUT_INFLATER_SERVICE;
+
 
 /**
  * Adapter-Objekt zur Verbindung zwischen Cursor-Objekt mit allen Lernkarten von Datenbank und
@@ -37,6 +38,7 @@ public class MeinCursorAdapter extends CursorAdapter {
     /** Index von Spalte mit Text für Rückseite. */
     private int _columnIndexHinten = -1;
 
+
     /**
      * Konstruktor, übergibt Argumente an Super-Konstruktor und holt {@link LayoutInflater}.
      *
@@ -59,6 +61,7 @@ public class MeinCursorAdapter extends CursorAdapter {
                 ", columnIndexHinten=" + _columnIndexHinten);
     }
 
+
     /**
      * Erzeugt View für eine Zeile durch "Aufblasen" des entsprechenden Layouts.
      *
@@ -75,6 +78,7 @@ public class MeinCursorAdapter extends CursorAdapter {
 
         return _inflater.inflate(R.layout.listview_eintrag, parent, false); // attachToRoot=false
     }
+
 
     /**
      * Trägt Werte aus aktuellem Datensatz von {@code cursor} in {@code view} ein.

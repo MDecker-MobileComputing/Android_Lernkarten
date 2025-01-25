@@ -1,10 +1,10 @@
-package de.mide.room.lernkarten.activities;
+package de.eldecker.room.lernkarten.activities;
 
-import static de.mide.room.lernkarten.helferlein.DialogHelper.zeigeDialog;
+import static de.eldecker.room.lernkarten.helferlein.DialogHelper.zeigeDialog;
 import static android.view.View.VISIBLE;
 import static android.view.View.INVISIBLE;
-import static de.mide.room.lernkarten.helferlein.IGlobaleKonstanten.TAG4LOGGING;
-import static de.mide.room.lernkarten.helferlein.IGlobaleKonstanten.EXTRA_KEY_LERN_MODUS;
+import static de.eldecker.room.lernkarten.helferlein.IGlobaleKonstanten.TAG4LOGGING;
+import static de.eldecker.room.lernkarten.helferlein.IGlobaleKonstanten.EXTRA_KEY_LERN_MODUS;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,11 +17,12 @@ import android.widget.TextView;
 
 import java.util.Date;
 
-import de.mide.room.lernkarten.R;
-import de.mide.room.lernkarten.db.LernkarteEntity;
-import de.mide.room.lernkarten.db.LernkartenDao;
-import de.mide.room.lernkarten.db.MeineDatenbank;
-import de.mide.room.lernkarten.helferlein.LernModusEnum;
+import de.eldecker.room.lernkarten.R;
+import de.eldecker.room.lernkarten.db.LernkarteEntity;
+import de.eldecker.room.lernkarten.db.LernkartenDao;
+import de.eldecker.room.lernkarten.db.MeineDatenbank;
+import de.eldecker.room.lernkarten.helferlein.LernModusEnum;
+
 
 /**
  * Activity zur Anzeige einer Lernkarte. Die Lernkarten werden anhand des Lernmodus, der

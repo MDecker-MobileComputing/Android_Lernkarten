@@ -1,4 +1,4 @@
-package de.mide.room.lernkarten;
+package de.eldecker.room.lernkarten;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("de.mide.room.lernkarten", appContext.getPackageName());
+        assertEquals("de.eldecker.room.lernkarten", appContext.getPackageName());
     }
 }

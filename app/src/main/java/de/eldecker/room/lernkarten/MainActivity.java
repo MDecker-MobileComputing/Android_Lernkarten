@@ -1,6 +1,6 @@
-package de.mide.room.lernkarten;
+package de.eldecker.room.lernkarten;
 
-import static de.mide.room.lernkarten.helferlein.DialogHelper.zeigeDialog;
+import static de.eldecker.room.lernkarten.helferlein.DialogHelper.zeigeDialog;
 
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
@@ -13,11 +13,11 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import de.mide.room.lernkarten.activities.LernMenueActivity;
-import de.mide.room.lernkarten.activities.ListenActivity;
-import de.mide.room.lernkarten.activities.NeueLernkarteActivity;
-import de.mide.room.lernkarten.db.LernkartenDao;
-import de.mide.room.lernkarten.db.MeineDatenbank;
+import de.eldecker.room.lernkarten.activities.LernMenueActivity;
+import de.eldecker.room.lernkarten.activities.ListenActivity;
+import de.eldecker.room.lernkarten.activities.NeueLernkarteActivity;
+import de.eldecker.room.lernkarten.db.LernkartenDao;
+import de.eldecker.room.lernkarten.db.MeineDatenbank;
 
 
 /**
@@ -115,6 +115,7 @@ public class MainActivity extends AppCompatActivity {
                     "Lernen ist noch nicht möglich, weil keine Lernkarten definiert sind.");
             return;
         }
+
         Intent intent = new Intent(this, LernMenueActivity.class);
         startActivity(intent);
     }

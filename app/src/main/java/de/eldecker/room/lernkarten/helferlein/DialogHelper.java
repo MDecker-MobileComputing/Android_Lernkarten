@@ -1,9 +1,9 @@
-package de.mide.room.lernkarten.helferlein;
+package de.eldecker.room.lernkarten.helferlein;
 
 import android.app.AlertDialog;
 import android.content.Context;
 
-import de.mide.room.lernkarten.R;
+import de.eldecker.room.lernkarten.R;
 
 
 /**
@@ -21,7 +21,7 @@ public class DialogHelper {
      *
      * @param title  Dialog-Titel
      *
-     * @param nachricht  Eigentlicher Text des Dialogs.
+     * @param nachricht  Eigentlicher Text des Dialogs
      */
     public static void zeigeDialog(Context context, String title, String nachricht) {
 

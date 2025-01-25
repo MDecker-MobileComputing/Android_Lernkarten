@@ -1,19 +1,19 @@
-package de.mide.room.lernkarten.activities;
+package de.eldecker.room.lernkarten.activities;
 
-import static de.mide.room.lernkarten.helferlein.IGlobaleKonstanten.EXTRA_KEY_LERN_MODUS;
-import static de.mide.room.lernkarten.helferlein.LernModusEnum.NOCH_NIE_VERWENDET;
-import static de.mide.room.lernkarten.helferlein.LernModusEnum.NOCH_NIE_RICHTIG_BEANTWORTET;
-import static de.mide.room.lernkarten.helferlein.LernModusEnum.MEHR_FALSCHE_ALS_RICHTIGE_ANTWORTEN;
-import static de.mide.room.lernkarten.helferlein.LernModusEnum.SCHON_LANGE_NICHT_MEHR_FALSCH_BEANTWORTET;
-import static de.mide.room.lernkarten.helferlein.LernModusEnum.SCHON_LANGE_NICHT_MEHR_RICHTIG_BEANTWORTET;
-import static de.mide.room.lernkarten.helferlein.LernModusEnum.ZUFAELLIG;
+import static de.eldecker.room.lernkarten.helferlein.IGlobaleKonstanten.EXTRA_KEY_LERN_MODUS;
+import static de.eldecker.room.lernkarten.helferlein.LernModusEnum.NOCH_NIE_VERWENDET;
+import static de.eldecker.room.lernkarten.helferlein.LernModusEnum.NOCH_NIE_RICHTIG_BEANTWORTET;
+import static de.eldecker.room.lernkarten.helferlein.LernModusEnum.MEHR_FALSCHE_ALS_RICHTIGE_ANTWORTEN;
+import static de.eldecker.room.lernkarten.helferlein.LernModusEnum.SCHON_LANGE_NICHT_MEHR_FALSCH_BEANTWORTET;
+import static de.eldecker.room.lernkarten.helferlein.LernModusEnum.SCHON_LANGE_NICHT_MEHR_RICHTIG_BEANTWORTET;
+import static de.eldecker.room.lernkarten.helferlein.LernModusEnum.ZUFAELLIG;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import de.mide.room.lernkarten.R;
+import de.eldecker.room.lernkarten.R;
 
 
 /**

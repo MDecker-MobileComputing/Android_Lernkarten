@@ -1,4 +1,4 @@
-package de.mide.room.lernkarten;
+package de.eldecker.room.lernkarten;
 
 import org.junit.Test;
 
