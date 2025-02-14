@@ -59,11 +59,9 @@ public abstract class MeineDatenbank extends RoomDatabase {
 
             SINGLETON_INSTANCE =
                     Room.databaseBuilder(
-
                             context.getApplicationContext(),
                             MeineDatenbank.class,
                             DB_DATEI_NAME
-
                     ).allowMainThreadQueries().build();
 
             Log.i(TAG4LOGGING, "Singleton-Instanz von Datenbank erzeugt.");
